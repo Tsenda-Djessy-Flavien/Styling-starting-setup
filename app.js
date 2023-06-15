@@ -3,19 +3,20 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
-      boxASelectead: false,
-      boxBSelectead: false,
-      boxCSelectead: false,
+      boxASelected: false,
+      boxBSelected: false,
+      boxCSelected: false,
     };
   },
   methods: {
     boxSelected(box) {
-        if (box = 'A') {
-            this.boxASelectead = true;
-        } else if (box = 'B'){
-            this.boxBSelectead = true;
+        if (box === 'A') {
+            // this.boxASelected = true; // no toggle
+            this.boxASelected = !this.boxASelected; // toggle
+        } else if (box === 'B'){
+            this.boxBSelected = !this.boxBSelected;
         } else {
-            this.boxCSelectead = true;
+            this.boxCSelected = !this.boxCSelected;
         }
     }
   },
